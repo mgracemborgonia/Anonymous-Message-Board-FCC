@@ -20,8 +20,8 @@ suite('Functional Tests', function() {
             .end((err, res) => {
                 assert.deepEqual(
                     res.status, 200,
-                    res.body.text, 'my test',
-                    res.body.delete_password, 'aaa',
+                    res.body.text, "my test",
+                    res.body.delete_password, "aaa",
                     res.body.reported, false
                 );
                 testThreadId = res.body._id
@@ -45,6 +45,7 @@ suite('Functional Tests', function() {
             .end((err, res) => {
                 assert.deepEqual(
                     res.status, 200,
+                    res.body.delete_password, "wrong",
                     res.text, "incorrect password"
                 );
                 done();
@@ -107,6 +108,7 @@ suite('Functional Tests', function() {
             .end((err, res) => {
                 assert.deepEqual(
                     res.status, 200,
+                    res.body.delete_password, "wrong",
                     res.text, "incorrect password"
                 );
                 done();
